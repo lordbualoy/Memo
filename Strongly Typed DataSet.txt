@@ -1,0 +1,8 @@
+Add DataSet file into solution the file will have .xsd extension and once generation of schema is completed, it can be reference in source code as a new class that derived from System.Data.DataSet
+
+DataSet1 ds = new DataSet1();
+SqlDataAdapter adapter = new SqlDataAdapter(
+  "SELECT Id, Name FROM dbo.Table1;",
+  "Data Source=localhost\\sqlexpress;Initial Catalog=Experiment;Integrated Security=True");
+
+adapter.Fill(ds, "Table1");

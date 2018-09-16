@@ -1,0 +1,4 @@
+About Server Name
+An instance is either the default, unnamed instance, or it is a named instance. When SQL Server 2005 is in installed in the default instance, it does not require a client to specify the name of the instance to make a connection. The client only has to know the server name.
+A named instance is identified by the network name of the computer plus the instance name that you specify during installation. The client must specify both the server name and the instance name when connecting.
+if the instance name in SQL Server Configuration Manager is "MSSQLSERVER" then it's probably a default instance

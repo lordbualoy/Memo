@@ -1,0 +1,4 @@
+publish web as Debug instead of Release
+place in IIS then convert to App
+use Debug>Attach to Process in Visual Studio and tick "Show processes from all users" and find and attach to w3wp.exe process
+browse the web and the breakpoint should be hit now

@@ -1,0 +1,70 @@
+public class FormData
+{
+	[Required]
+	public int Id { get; set; }
+	[Required]
+	public string Name { get; set; }
+}
+
+public class DefaultController : Controller
+{
+	// GET: Default
+	public ActionResult Form()
+	{
+		return View();
+	}
+
+	[HttpPost]
+	public ActionResult Form(FormData formData)
+	{
+		bool isValid = ModelState.IsValid;
+
+		return View(formData);
+	}
+}
+
+@{
+    @model WebApplication5.Models.FormData
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title></title>
+</head>
+<body>
+    <div>
+        @using (Html.BeginForm())
+        {
+            @Html.ValidationSummary(true)
+
+            <fieldset>
+                <legend>Movie</legend>
+
+                <div class="editor-label">
+                    @Html.LabelFor(model => model.Id)
+                </div>
+                <div class="editor-field">
+                    @Html.EditorFor(model => model.Id)
+                    @Html.ValidationMessageFor(model => model.Id)
+                </div>
+
+                <div class="editor-label">
+                    @Html.LabelFor(model => model.Name)
+                </div>
+                <div class="editor-field">
+                    @Html.EditorFor(model => model.Name)
+                    @Html.ValidationMessageFor(model => model.Name)
+                </div>
+
+                <p>
+                    <input type="submit" value="submit" />
+                </p>
+            </fieldset>
+        }
+    </div>
+</body>
+</html>

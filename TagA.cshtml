@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+</head>
+<body>
+	<div class="navbar-header">
+		@Html.ActionLink("Application name", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+		<ul class="nav navbar-nav">
+			<li>@Html.ActionLink("Home", "Index", "Home")</li>
+			<li>@Html.ActionLink("About", "About", "Home")</li>
+			<li>@Html.ActionLink("Contact", "Contact", "Home")</li>
+		</ul>
+	</div>
+	
+	<!--Will be evaluated as-->
+	
+	<div class="navbar-header">
+		<a class="navbar-brand" href="/">Application name</a>
+		<ul class="nav navbar-nav">
+			<li><a href="/">Home</a></li>
+			<li><a href="/Home/About">About</a></li>
+			<li><a href="/Home/Contact">Contact</a></li>
+		</ul>
+	</div>
+</body>
+</html>

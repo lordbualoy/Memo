@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My ASP.NET Application</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+</head>
+<body>
+</body>
+</html>
+
+the key to be used as argument of Styles.Render and Scripts.Render are defined in the file "App_Start\BundleConfig.cs"
+
+bundles.Add(new ScriptBundle("~/bundles/jquery").Include(
+			"~/Scripts/jquery-{version}.js"));
+
+bundles.Add(new ScriptBundle("~/bundles/jqueryval").Include(
+			"~/Scripts/jquery.validate*"));
+
+bundles.Add(new ScriptBundle("~/bundles/modernizr").Include(
+			"~/Scripts/modernizr-*"));
+
+bundles.Add(new ScriptBundle("~/bundles/bootstrap").Include(
+		  "~/Scripts/bootstrap.js",
+		  "~/Scripts/respond.js"));
+
+bundles.Add(new StyleBundle("~/Content/css").Include(
+		  "~/Content/bootstrap.css",
+		  "~/Content/site.css"));

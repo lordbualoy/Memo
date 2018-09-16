@@ -1,0 +1,2 @@
+SQL Server LocalDB is the current implementation of SQL Server Compact
+Once LocalDB is installed you can use AttachDbFileName property of the connection string to "open" an MDF file. Keep in mind that the same file can only be opened by a single LocalDB instance (single Windows login) at any given time, so this is not a data-sharing feature.
