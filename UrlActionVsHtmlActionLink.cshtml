@@ -1,0 +1,11 @@
+Html.ActionLink generates an <a href=".."></a> tag whereas Url.Action returns only an url.
+
+For example:
+@Html.ActionLink("link text", "someaction", "somecontroller", new { id = "123" }, null)
+generates:
+<a href="/somecontroller/someaction/123">link text</a>
+
+and
+Url.Action("someaction", "somecontroller", new { id = "123" })
+generates:
+/somecontroller/someaction/123

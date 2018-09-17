@@ -17,7 +17,8 @@ public class DefaultController : Controller
 	[HttpPost]
 	public ActionResult Form(FormData formData)
 	{
-		bool isValid = ModelState.IsValid;
+		if (ModelState.IsValid)
+			UpdateForm(formData);
 
 		return View(formData);
 	}
