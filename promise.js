@@ -14,7 +14,7 @@ myFirstPromise.then((successMessage) => {
 });
 
 
-alternate
+//alternate
 let myFirstPromise = new Promise((resolve, reject) => {
   setTimeout(resolve, 250);
 });

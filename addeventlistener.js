@@ -1,24 +1,24 @@
-event argument 
+/*event argument 
 When an event happens, the browser creates an event object, puts details into it and passes it as an argument to the handler.
-The event is always present, even when you don't provide a name:
+The event is always present, even when you don't provide a name:*/
 
 $(".foo").on("click", function(){
   alert( arguments[0].type );
 });
 
-That is the same as saying this:
+//That is the same as saying this:
 
 $(".foo").on("click", function(event){
   alert( event.type );
 });
 
-the name of event argument can be anything for example
+//the name of event argument can be anything for example
 
 $(".foo").on("click", function(myEvent){
   alert( myEvent.type );
 });
 
-parameterized addEventListener
+//parameterized addEventListener
 
 // Function to change the content of t2
 function modifyText(new_text) {
@@ -32,7 +32,7 @@ el.addEventListener("click", function(){
 	modifyText("four");
 });
 
-or
+//or
 
 function callback(new_text) {
   return function modifyText() {
@@ -46,7 +46,7 @@ el.addEventListener("click", callback(new_text));
 
 
 
-specifically designate this
+//specifically designate this
 
 var Something = function(element) {
   // |this| is a newly created object
@@ -62,7 +62,7 @@ var Something = function(element) {
 }
 var s = new Something(document.body);
 
-or use handleEvent method
+//or use handleEvent method
 
 var Something = function(element) {
   // |this| is a newly created object

@@ -1,4 +1,4 @@
-Variables declared by let have their scope in the block for which they are defined, as well as in any contained sub-blocks. In this way, let works very much like var. The main difference is that the scope of a var variable is the entire enclosing function:
+//Variables declared by let have their scope in the block for which they are defined, as well as in any contained sub-blocks. In this way, let works very much like var. The main difference is that the scope of a var variable is the entire enclosing function:
 
 function varTest() {
   var x = 1;
@@ -18,7 +18,7 @@ function letTest() {
   console.log(x);  // 1
 }
 
-At the top level of programs and functions, let, unlike var, does not create a property on the global object. For example:
+//At the top level of programs and functions, let, unlike var, does not create a property on the global object. For example:
 
 var x = 'global';
 let y = 'global';
