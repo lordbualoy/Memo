@@ -4,39 +4,39 @@ var myApp = (function() {
  
     return {
         next: function() {
-            return id++;    
+            return id++;
         },
  
         reset: function() {
-            id = 0;     
+            id = 0;
         }
     };  
-})();   
+})();
  
 window.console && console.log(
     myApp.next(),
     myApp.next(),
     myApp.reset(),
     myApp.next()
-) //0, 1, undefined, 0  
+) //0, 1, undefined, 0
 
 
 var myApp = {};
-(function(context) { 
+(function(context) {
     var id = 0;
  
     context.next = function() {
-        return id++;    
+        return id++;
     };
  
     context.reset = function() {
-        id = 0;     
+        id = 0;
     }
-})(myApp);  
+})(myApp);
  
 window.console && console.log(
     myApp.next(),
     myApp.next(),
     myApp.reset(),
     myApp.next()
-) //0, 1, undefined, 0  
+) //0, 1, undefined, 0
