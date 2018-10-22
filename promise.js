@@ -22,3 +22,32 @@ let myFirstPromise = new Promise((resolve, reject) => {
 myFirstPromise.then(() => {
   console.log("Yay!");
 });
+
+//resolve vs reject
+function promiseFunc(flag){
+	console.log(flag)
+	return new Promise((resolve, reject) => {
+	  if (flag)
+		  resolve();
+	  else
+		  reject();
+	});
+};
+promiseFunc(true)					//true
+.then(()=>promiseFunc(true))		//true
+.then(()=>promiseFunc(false))		//false
+.catch(()=>console.log("error"));	//error
+
+promiseFunc(false)					//false
+.then(()=>promiseFunc(true))		//skipped
+.then(()=>promiseFunc(true))		//skipped
+.catch(()=>console.log("error"));	//error
+
+//await Promise
+//to use await keyword in the function the function itself is required to have async modifier assigned first
+async function main(){
+	function timeout(ms) {
+		return new Promise((resolve, reject) => setTimeout(resolve, ms));
+	}
+	await timeout(3000);
+};
